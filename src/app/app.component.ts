@@ -7,14 +7,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class AppComponent {
 
-  @Output() aoExibir = new EventEmitter<any>();
-
   title = 'bytebank';
-  transferencia: any;
+  transferencias: { valor: number, destino: number }[] = [];
 
   transferir($event) {
-    console.log('$event', $event)
-    this.transferencia = $event;
-    this.aoExibir.emit(this.transferencia);
+    console.log('$event', $event);
+    const transferencia = { ...$event, data: new Date() }
+    this.transferencias.push(transferencia);
   }
 }

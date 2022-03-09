@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ExtratoComponent implements OnInit {
 
-  @Input() transferencia: { valor: number, destino: number };
+  @Input() transferencias: { valor: number, destino: number }[];
 
   constructor() { }
 
